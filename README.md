@@ -9,3 +9,4 @@ https://gcarlin01.github.io/freeCodeCamp/nutritionLabel/index.html
 https://gcarlin01.github.io/freeCodeCamp/accessibilityQuiz/index.html
 https://gcarlin01.github.io/freeCodeCamp/tributePage/index.html
 https://gcarlin01.github.io/freeCodeCamp/balanceSheet/index.html
+https://gcarlin01.github.io/freeCodeCamp/catPainting/index.html
