@@ -11,3 +11,4 @@ https://gcarlin01.github.io/freeCodeCamp/tributePage/index.html
 https://gcarlin01.github.io/freeCodeCamp/balanceSheet/index.html
 https://gcarlin01.github.io/freeCodeCamp/catPainting/index.html
 https://gcarlin01.github.io/freeCodeCamp/piano/index.html
+https://gcarlin01.github.io/freeCodeCamp/technicalDocumentation/index.html
