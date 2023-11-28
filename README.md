@@ -13,3 +13,4 @@ https://gcarlin01.github.io/freeCodeCamp/catPainting/index.html
 https://gcarlin01.github.io/freeCodeCamp/piano/index.html
 https://gcarlin01.github.io/freeCodeCamp/technicalDocumentation/index.html
 https://gcarlin01.github.io/freeCodeCamp/citySkyline/index.html
+https://gcarlin01.github.io/freeCodeCamp/magazine/index.html
