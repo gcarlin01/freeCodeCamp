@@ -17,3 +17,4 @@ https://gcarlin01.github.io/freeCodeCamp/magazine/index.html
 https://gcarlin01.github.io/freeCodeCamp/landingPage/index.html
 https://gcarlin01.github.io/freeCodeCamp/ferrisWheel/index.html
 https://gcarlin01.github.io/freeCodeCamp/penguinWaving/index.html
+https://gcarlin01.github.io/freeCodeCamp/personalPortfolio/index.html
