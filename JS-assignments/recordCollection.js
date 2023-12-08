@@ -27,9 +27,10 @@ function updateRecords(records, id, prop, value) {
     records[id][prop] = value;
   } else {
     if (!records[id].hasOwnProperty("tracks")) {
+      //hasOwnProperty method validates (t/f) if the passed property is a direct property of the object
       records[id].tracks = [];
     }
-    records[id].tracks.push(value);
+    records[id].tracks.push(value); //push method places value at the end of array
   }
   return records;
 }
