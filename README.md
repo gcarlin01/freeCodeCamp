@@ -22,3 +22,14 @@
 18. [ferrisWheel](https://gcarlin01.github.io/freeCodeCamp/ferrisWheel/index.html)
 19. [penguinWaving](https://gcarlin01.github.io/freeCodeCamp/penguinWaving/index.html)
 20. [personalPortfolio](https://gcarlin01.github.io/freeCodeCamp/personalPortfolio/index.html)
+
+# My solutions to some JS assignments can be found in the JS-assignments file.
+
+### Assignments such as :
+
+1. golfCode
+2. countingCards
+3. countdown
+4. profileLookup
+5. rangeOfNumbers
+6. recordCollection
