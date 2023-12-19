@@ -131,3 +131,20 @@ function truncateString(str, num) {
   }
 }
 console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
+// Finder Keepers
+function findElement(arr, func) {
+  // Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+  //1st try
+  // let num = undefined;
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[i])) {
+      return arr[i];
+      // num = arr[i]
+    }
+  }
+  // } return num
+}
+// Easier method is using .find() which is a method that returns the first emlement in an array that satisfies a testing function, so it would look something like this:
+// return arr.find(func)
+console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
