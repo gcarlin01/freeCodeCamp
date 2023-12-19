@@ -119,3 +119,15 @@ function repeatStringNumTimes(str, num) {
   return result;
 }
 console.log(repeatStringNumTimes("abc", 3));
+
+// Truncate a string
+function truncateString(str, num) {
+  // Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+  if (str.length > num) {
+    // Slicing (0, num) does not include the last index but the one before which is what I want since it starts from index[0]
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+}
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
