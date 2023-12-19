@@ -80,3 +80,27 @@ console.log(
 );
 
 // Confirm the ending
+function confirmEnding(str, target) {
+  // Check if a string (first argument, str) ends with the given target string (second argument, target)
+  // NOTE: this has to work using several characters string as target not just 1 character
+  // 1st try easiest method is to use endsWith() but for this assignment they want me to use substring methods
+  // if (str.endsWith(target)) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+  // or just
+  // return str.endsWith(target)
+  // 2nd try works, but only checks last character
+  // let lastCharacter = str.length - 1;
+  // if (target == str[lastCharacter]) {
+  //   return true
+  // } else {
+  //   return false;
+  // }
+  // 3rd try using slice and comparing the target to our copy from right (end) to left (start) by using "-" and counting the lenght of our target
+  // return str.slice(-target.length) == target
+  // 4th try using regular expression, `` = template literals, ${} = embedded expression for our target and then the $ so it knows it goes at end and testing it towards our str
+  return RegExp(`${target}$`).test(str);
+}
+console.log(confirmEnding("Bastian", "n"));
