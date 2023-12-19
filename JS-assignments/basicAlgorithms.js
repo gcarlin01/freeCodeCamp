@@ -104,3 +104,18 @@ function confirmEnding(str, target) {
   return RegExp(`${target}$`).test(str);
 }
 console.log(confirmEnding("Bastian", "n"));
+
+// Repeat a string n times
+function repeatStringNumTimes(str, num) {
+  // Repeat a given string str (first argument) for num times (second argument).  Return an empty string if num is not a positive number
+  let result = "";
+  if (num <= 0) {
+    result = "";
+  } else {
+    for (let i = 1; i <= num; i++) {
+      result += str;
+    }
+  }
+  return result;
+}
+console.log(repeatStringNumTimes("abc", 3));
