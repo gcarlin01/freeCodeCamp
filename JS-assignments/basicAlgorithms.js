@@ -148,3 +148,15 @@ function findElement(arr, func) {
 // Easier method is using .find() which is a method that returns the first emlement in an array that satisfies a testing function, so it would look something like this:
 // return arr.find(func)
 console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
+
+// Check if value is boolean primitive
+function booWho(bool) {
+  //Check if a value is classified as a boolean primitive. Return true or false.
+  //Boolean primitives are true and false.
+  if ((bool === true) | (bool === false)) {
+    return true;
+  } else if (typeof bool !== "boolean") {
+    return false;
+  }
+}
+console.log(booWho(null));
