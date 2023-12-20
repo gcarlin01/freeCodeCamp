@@ -178,3 +178,17 @@ function titleCase(str) {
   return eachWord.join(" ");
 }
 console.log(titleCase("I'm a little tea pot"));
+
+// Slice and splice
+function frankenSplice(arr1, arr2, n) {
+  // Copy each element of the first array into the second array, in order.
+  // Begin inserting elements at index n of the second array.
+  // Return the resulting array. The input arrays should remain the same after the function runs.
+  // I first copy each array input into its own var
+  let copyOfArr1 = arr1.slice();
+  let copyOfArr2 = arr2.slice();
+  // Add copyOfArr1 to copyOfArr2 using the splice method, placing it at index[n] with 0 deletions. Note that I am using the spread operator to bring out the numbers out of the array,
+  copyOfArr2.splice(n, 0, ...copyOfArr1);
+  return copyOfArr2;
+}
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
