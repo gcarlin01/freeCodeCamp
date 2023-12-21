@@ -193,4 +193,16 @@ function frankenSplice(arr1, arr2, n) {
 }
 console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
 
-// flasy bouncer
+// Falsy bouncer
+function bouncer(arr) {
+  // Remove all falsy values from an array. Return a new array; do not mutate the original array.
+  // Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+  let cleanArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      cleanArray.push(arr[i]);
+    }
+  }
+  return cleanArray;
+}
+console.log(bouncer([7, "ate", "", false, 9]));
