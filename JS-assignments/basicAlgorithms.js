@@ -236,3 +236,16 @@ function mutation(arr) {
   return true;
 }
 console.log(mutation(["hello", "hey"]));
+
+// Chunky monkey
+function chunkArrayInGroups(arr, size) {
+  // Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+  let result = [];
+  let numberOfArrays = arr.length / size;
+  for (let i = 0; i < numberOfArrays; i++) {
+    let splicer = arr.splice(0, size);
+    result.push(splicer);
+  }
+  return result;
+}
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
