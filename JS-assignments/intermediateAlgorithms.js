@@ -166,3 +166,19 @@ function pairElement(str) {
   return result;
 }
 console.log(pairElement("GCG")); // should return [["G", "C"], ["C","G"], ["G", "C"]]
+
+// Missing Letters
+// Find the missing letter in the passed letter range and return it.
+// If all letters are present in the range, return undefined.
+function fearNotLetter(str) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  let startingPoint = alphabet.indexOf(str[0]);
+  for (let i = 0; i < str.length; i++) {
+    let alphabetChecker = alphabet[startingPoint + i];
+    if (str[i] !== alphabetChecker) {
+      return alphabetChecker;
+    }
+  }
+}
+console.log(fearNotLetter("abce"));
+console.log(fearNotLetter("stvwx"));
