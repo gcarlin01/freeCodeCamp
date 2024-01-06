@@ -212,3 +212,27 @@ function convertHTML(str) {
 }
 console.log(convertHTML("Dolce & Gabbana"));
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+
+// Sum all odd fibonacci numbers
+// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+// The first two numbers in the Fibonacci sequence are 0 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
+// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+function sumFibs(num) {
+  // 0, 1, 1, 2, 3, 5.... so next number is equal to current plus previous and I start again.
+  let previous = 0;
+  let current = 1;
+  let next = 0; //this should give me the next number, and next should now become my current and current should become my previous and sum those again and so on..until I get to a number equal or less than my given arg for my param num.
+  let sum = 0; // this is to get the sum of all fibs
+  while (current <= num) {
+    // keep this loop as long as current is less than or equal than num
+    if (current % 2 > 0) {
+      // only add the odd current fib numbers
+      sum += current; // sets it at 1
+    }
+    next = current + previous; // starts like this 1 = 1 + 0
+    previous = current; // 0 now becomes 1 for previous
+    current = next; // current continues being 1 but previous changed which meand our next number is going to be 2 now.
+  }
+  return sum;
+}
+console.log(sumFibs(4));
