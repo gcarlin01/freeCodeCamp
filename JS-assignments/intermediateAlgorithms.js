@@ -195,3 +195,20 @@ function uniteUnique(first, ...arr) {
 }
 console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
+
+// Convert HTML entities
+// Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+function convertHTML(str) {
+  let entities = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;",
+  };
+  let splitter = str.split("");
+  let result = splitter.map((element) => entities[element] || element).join("");
+  return result;
+}
+console.log(convertHTML("Dolce & Gabbana"));
+console.log(convertHTML("Hamburgers < Pizza < Tacos"));
