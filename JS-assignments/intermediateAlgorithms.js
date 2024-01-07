@@ -263,3 +263,32 @@ function sumPrimes(num) {
 }
 console.log(sumPrimes(10)); // primes = 2, 3, 5, 7 sum = 17
 console.log(sumPrimes(977)); // sum = 73156
+
+// Smallest common multiple
+// Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
+// The range will be an array of two numbers that will not necessarily be in numerical order.
+// For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
+function smallestCommons(arr) {
+  let newArr = [];
+  let sorted = arr.sort((a, b) => a - b);
+  console.log(sorted);
+  for (let i = sorted[0]; i <= sorted[1]; i++) {
+    newArr.push(i);
+  }
+  let gcd = (a, b) => (!b ? a : gcd(b, a % b)); // Arrow function that first checks if b is zero (!b means "not b" or "b is falsy"). If b is zero, the function returns a. This is the base case for the recursion. When one of the numbers becomes zero, the other number is the greatest common divisor.If b is not zero, the function calls itself with the arguments b and a % b. The % (modulo) operator calculates the remainder when a is divided by b. So, in the next iteration, the function is called with the values of b and the remainder of the division.This recursive call continues until b becomes zero, and the base case is reached. At that point, the function starts returning the values from the recursive calls until it reaches the original call, giving the greatest common divisor of the two original numbers.
+
+  let lcm = (arr) => {
+    if (arr.length === 0) {
+      // If the array is empty, return undefined or handle it as appropriate for your use case.
+      return undefined;
+    }
+    // Reduce the array to find the LCM of all elements
+    return arr.reduce(
+      (accumulator, currentValue) =>
+        (accumulator * currentValue) / gcd(accumulator, currentValue)
+    );
+  };
+  return lcm(newArr);
+}
+console.log(smallestCommons([5, 1]));
+console.log(smallestCommons([23, 18]));
