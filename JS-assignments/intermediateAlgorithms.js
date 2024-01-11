@@ -324,3 +324,22 @@ console.log(
     return n > 2;
   })
 );
+
+// Steamroller
+// Flatten a nested array. You must account for varying levels of nesting.
+function steamrollArray(arr) {
+  let flattenedArray = [];
+  function flatten(element) {
+    if (Array.isArray(element)) {
+      for (let i = 0; i < element.length; i++) {
+        flatten(element[i]);
+      }
+    } else {
+      flattenedArray.push(element);
+    }
+  }
+  flatten(arr);
+  return flattenedArray;
+}
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+console.log(steamrollArray([[["a"]], [["b"]]]));
