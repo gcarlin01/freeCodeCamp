@@ -437,3 +437,16 @@ const Person = function (first, last) {
     return this.getLastName();
   };
 };
+
+// Map the debris
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  let result = arr.map((object) => {
+    let distance = object.avgAlt + earthRadius;
+    let keplers = 2 * Math.PI * Math.sqrt(distance ** 3 / GM);
+    return { name: object.name, orbitalPeriod: Math.round(keplers) };
+  });
+  return result;
+}
+orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]);
