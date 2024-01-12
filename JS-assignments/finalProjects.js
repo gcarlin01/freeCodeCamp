@@ -43,3 +43,23 @@ console.log(convertToRoman(36));
 console.log(convertToRoman(83));
 console.log(convertToRoman(99));
 console.log(convertToRoman(3999));
+
+// Caesars Cipher
+// One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.
+// A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on.
+// Write a function which takes a ROT13 encoded string as input and returns a decoded string.
+// All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+function rot13(str) {
+  let charCode;
+  let answerUncoded = "";
+  for (let i = 0; i < str.length; i++) {
+    charCode = str.charCodeAt(i);
+    if (charCode >= 65 && charCode <= 90) {
+      // in the charCode table #65 to #90 are all upperCase letters
+      charCode = ((charCode - 65 + 13) % 26) + 65; // Removes the first 65 elements from the charCode so it only stays the 26 elements of the alphabet and then adds 13 for the ROT13 and uses the modulo operator to state that it cycles around the 26 elements of the alphablet, then adds 65 to place all the charCode elements in place
+    }
+    answerUncoded += String.fromCharCode(charCode);
+  }
+  return answerUncoded;
+}
+console.log(rot13("SERR PBQR PNZC"));
