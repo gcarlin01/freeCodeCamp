@@ -80,3 +80,91 @@ function telephoneCheck(str) {
   return answer;
 }
 console.log(telephoneCheck("1 555 555 5555"));
+
+// Cash Register
+// Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
+// cid is a 2D array listing available currency.
+// The checkCashRegister() function should always return an object with a status key and a change key.
+// Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.
+// Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.
+// Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.
+function checkCashRegister(price, cash, cid) {
+  let currencyUnits = [
+    ["PENNY", 0.01],
+    ["NICKEL", 0.05],
+    ["DIME", 0.1],
+    ["QUARTER", 0.25],
+    ["ONE", 1],
+    ["FIVE", 5],
+    ["TEN", 10],
+    ["TWENTY", 20],
+    ["ONE HUNDRED", 100],
+  ];
+  let changeOwed = cash - price;
+  let totalInRegister = 0;
+  for (let i = 0; i < cid.length; i++) {
+    totalInRegister += cid[i][1];
+  }
+  totalInRegister = Number(totalInRegister.toFixed(2));
+  if (changeOwed > totalInRegister) {
+    return { status: "INSUFFICIENT_FUNDS", change: [] };
+  } else if (changeOwed == totalInRegister) {
+    return { status: "CLOSED", change: cid };
+  }
+  let change = [];
+  for (let i = cid.length - 1; i >= 0; i--) {
+    let cashInDrawerDenominationName = cid[i][0];
+    let cashInDrawerDenominationValue = cid[i][1];
+    let currencyUnitAtDenominationValue = currencyUnits[i][1];
+    let cashInDrawerDenomitationTimes = Math.floor(
+      cashInDrawerDenominationValue / currencyUnitAtDenominationValue
+    );
+    let currencyUnitsToGive = 0;
+    while (
+      changeOwed >= currencyUnitAtDenominationValue &&
+      cashInDrawerDenomitationTimes > 0
+    ) {
+      changeOwed = Number(changeOwed - currencyUnitAtDenominationValue).toFixed(
+        2
+      );
+      cashInDrawerDenomitationTimes--;
+      currencyUnitsToGive++;
+    }
+    if (currencyUnitsToGive > 0) {
+      change.push([
+        cashInDrawerDenominationName,
+        currencyUnitsToGive * currencyUnitAtDenominationValue,
+      ]);
+    }
+  }
+  if (changeOwed > 0) {
+    return { status: "INSUFFICIENT_FUNDS", change: [] };
+  }
+  return { status: "OPEN", change: change };
+}
+console.log(
+  checkCashRegister(19.5, 20, [
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100],
+  ])
+);
+console.log(
+  checkCashRegister(3.26, 100, [
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100],
+  ])
+);
